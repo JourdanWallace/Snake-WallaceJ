@@ -38,8 +38,10 @@ function gameInitialize() {
     
     canvas.width = screenWidth;
     canvas.height = screenHeight;
-}
-
+    
+    document.addEventListener("keydown", keyboardHandler);
+    }
+    
 function gameLoop() {
     gameDraw();
     snakeUpdate();
@@ -85,6 +87,9 @@ function snakeUpdate() {
     if(snakeDirection == "down") {
         snakeHeadY++;
     }
+    else if(snakeDirection == "right") {
+        snakeHeadX++; 
+    }
     
     var snakeTail = snake.pop(); 
     snakeTail.x = snakeHeadX;
@@ -116,4 +121,17 @@ function setFoodPosition() {
    
    food.x = randomX;
    food.y = randomY;
+}
+
+/* --------------------------------------------------------------------------
+ * Input Functions
+ * --------------------------------------------------------------------------
+ */
+function keyboardHandler(event) {
+    console.log(event);
+    
+    if (event.keyCode == "39") {
+         snakeDirection = "right";
+    }
+    else if(event.keyCode == "40")
 }
