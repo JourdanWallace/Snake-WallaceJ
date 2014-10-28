@@ -209,6 +209,6 @@ function displayMenu(menu) {
 
 function showMenu(state) {
     if(state == "GAME OVER") {
-     displaymenu(gameOverMenu);   
+     displayMenu(gameOverMenu);   
     }
 }

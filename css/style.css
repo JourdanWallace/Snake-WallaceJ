@@ -11,3 +11,23 @@ body {
     position: absolute;
     visibility: hidden;
 }
+
+h1, h3{
+    font-family: 'Monofett', cursive;
+    color: purple;
+    text-align: center;
+}
+
+.title{
+    font-size: 62px;
+    margin-bottom: 0px;
+}
+
+#restartButton{
+    border: 2px dotted red;
+    border-radius: 100px;
+}
+
+#restartButton:hover{
+    background-color: #110011;
+}
