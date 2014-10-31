@@ -7,7 +7,7 @@ body {
     display: circle;
 }
 
-#gameOver, #playHUD {
+#gameOver, #playHUD, #mainMenu {
     position: absolute;
     visibility: hidden;
 }
@@ -33,6 +33,19 @@ h1, h2, h3 {
     background-color: #009900;
 }
 
+#mainMenu{
+    border: 2px dotted red;
+    border-radius: 100px;
+}
+
+#mainMenu:hover{
+    background-color: #110011;
+}
+
 #scoreboard {
     margin: 0px;
 }
+
+audio{
+    audio: import url("http://fonts.googleapis.com/css?family=Press+Start+2P");
+}    
