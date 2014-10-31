@@ -19,7 +19,7 @@ var gameOverMenu;
 var restartButton;
 var playHUD;
 var scoreboard;
-var mainmenu;
+var mainMenu;
 
 /* ---------------------------------------------------------------------------
  * Executing Game Code
@@ -50,20 +50,25 @@ function gameInitialize() {
     canvas.height = screenHeight;
 
     document.addEventListener("keydown", keyboardHandler);
-
+    document.addEventListener("click", keyboardHandler);
+    
     gameOverMenu = document.getElementById("gameOver");
     centerMenuPosition(gameOverMenu);
 
     restartButton = document.getElementById("restartButton");
     restartButton.addEventListener("click", gameRestart);
     
+    snakePlay = document.getElementById("snakePlay");
+    snakePlay.addEventListener("click", snakePlay);
+    
     mainMenu = document.getElementById("mainMenu");
-    mainMenu.addEventListener("click", mainMenu);
+    
     
     playHUD = document.getElementById("playHUD");
     scoreboard = document.getElementById("scoreboard");
 
-    setState("PLAY");
+    setState("MAIN MENU");
+    
 }
 
 function gameLoop() {
@@ -73,8 +78,6 @@ function gameLoop() {
         snakeUpdate();
         snakeDraw();
         foodDraw();
-        Mainmenu();
-
     }
 }
 
