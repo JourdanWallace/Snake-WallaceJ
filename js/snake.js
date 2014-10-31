@@ -256,7 +256,7 @@ function showMenu(state) {
         displayMenu(playHUD);
 
     if (state == "MAIN MENU")
-        displayMenu(Mainmenu);
+        displayMenu(mainMenu);
     }
 }
 
