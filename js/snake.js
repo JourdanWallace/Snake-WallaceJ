@@ -19,7 +19,6 @@ var gameOverMenu;
 var restartButton;
 var playHUD;
 var scoreboard;
-var mainmenu;
 
 /* ---------------------------------------------------------------------------
  * Executing Game Code
@@ -71,8 +70,6 @@ function gameLoop() {
         snakeUpdate();
         snakeDraw();
         foodDraw();
-        Mainmenu();
-
     }
 }
 
@@ -85,8 +82,8 @@ function gameDraw() {
 function gameRestart() {
     snakeInitialize();
     foodInitialize();
-    hideMenu(gameOverMenu);
     setState("PLAY");
+    mainMenu();
 }
 
 /* ---------------------------------------------------------------------------
@@ -219,7 +216,6 @@ function checkSnakeCollisions(snakeHeadX, snakeHeadY) {
     for (var index = 1; index < snake.length; index++) {
         if (snakeHeadX == snake[index].x && snakeHeadY == snake[index].y) {
             setState("GAME OVER");
-            return;
         }
     }
 }
@@ -252,9 +248,6 @@ function showMenu(state) {
     }
     else if (state == "PLAY") {
         displayMenu(playHUD);
-
-    if (state == "MAIN MENU")
-        displayMenu(Mainmenu);
     }
 }
 
@@ -265,4 +258,4 @@ function centerMenuPosition(menu) {
 
 function drawScoreboard() {
     scoreboard.innerHTML = "Length: " + snakeLength;
-} 
+}
