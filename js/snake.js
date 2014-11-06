@@ -28,7 +28,7 @@ var scoreboard;
 gameInitialize();
 snakeInitialize();
 foodInitialize();
-setInterval(gameLoop, 1000 / 20);
+setInterval(gameLoop, 1000 / 30);
 
 
 
@@ -55,7 +55,6 @@ function gameInitialize() {
 
     restartButton = document.getElementById("restartButton");
     restartButton.addEventListener("click", gameRestart);
-    
     playHUD = document.getElementById("playHUD");
     scoreboard = document.getElementById("scoreboard");
 
@@ -75,7 +74,7 @@ function gameLoop() {
 function gameDraw() {
     context.fillStyle = "rgb(0,245,90)";
     context.fillRect(0, 0, screenWidth, screenHeight);
-    
+
 }
 
 function gameRestart() {
@@ -95,7 +94,6 @@ function snakeInitialize() {
     snakeLength = 3;
     snakeSize = 20;
     snakeDirection = "down";
-
     for (var index = snakeLength - 1; index >= 0; index--) {
         snake.push({
             x: index,
@@ -206,7 +204,7 @@ function checkWallCollisions(snakeHeadX, snakeHeadY) {
         setState("GAME OVER");
     }
 
-    else if (snakeHeadY * snakeSize >= screenWidth || snakeHeadY * snakeSize < 0) {
+    else if (snakeHeadY * snakeSize >= screenHeight || snakeHeadY * snakeSize < 0) {
         setState("GAME OVER");
     }
 }
@@ -249,8 +247,8 @@ function showMenu(state) {
     else if (state == "PLAY") {
         displayMenu(playHUD);
 
-    if (state == "MAIN MENU")
-        displayMenu(Mainmenu);
+        if (state == "MAIN MENU")
+            displayMenu(Mainmenu);
     }
 }
 
