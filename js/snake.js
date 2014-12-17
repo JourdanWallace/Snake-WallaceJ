@@ -14,6 +14,7 @@ var context;
 var screenWidth;
 var screenHeight;
 
+var gamePlay;
 var gameState;
 var gameOverMenu;
 var restartButton;
@@ -52,11 +53,15 @@ function gameInitialize() {
 
     gameOverMenu = document.getElementById("gameOver");
     centerMenuPosition(gameOverMenu);
-
+    
+    playMenu = document.getElementById("PLAY");
+    centerMenuPosition(playMenu);
+    
     restartButton = document.getElementById("restartButton");
     restartButton.addEventListener("click", gameRestart);
     playHUD = document.getElementById("playHUD");
     scoreboard = document.getElementById("scoreboard");
+    
 
     setState("PLAY");
 }
@@ -64,10 +69,12 @@ function gameInitialize() {
 function gameLoop() {
     gameDraw();
     drawScoreboard();
+    drawplayMenu();
     if (gameState == "PLAY") {
         snakeUpdate();
         snakeDraw();
         foodDraw();
+        scoreboardUpdate();
     }
 }
 
@@ -76,6 +83,7 @@ function gameDraw() {
     context.fillRect(0, 0, screenWidth, screenHeight);
 
 }
+
 
 function gameRestart() {
     snakeInitialize();
@@ -233,11 +241,11 @@ function setState(state) {
  */
 
 function displayMenu(menu) {
-    menu.style.visibility = "visible";
+    menu.style.visibility = "hidden";
 }
 
 function hideMenu(menu) {
-    menu.style.visibility = "hidden";
+    menu.style.visibility = "visible";
 }
 
 function showMenu(state) {

@@ -1,45 +1,61 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 #game-screen {
-    display: circle;
+    display:block;
 }
 
-#gameOver, #playHUD {
+#play-screen {
+    display: block;
+}
+
+#gameOver {
     position: absolute;
     visibility: hidden;
 }
 
-#mainMenu {
+#PLAY {
     position: absolute;
     visibility: visible;
 }
 
-h1, h2, h3 {
-    font-family: 'Permanent Marker', cursive;
-    color: purple;
+h1, h2, h3, h4 {
+    font-family:'PERMANENT MARKER', cursive;
+    color: white;
     text-align: center;
 }
 
-.title{
+.title {
     font-size: 62px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
-#restartButton{
-    border: 2px dotted red;
-    border-radius: 100px;
+#play-button{
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
-#restartButton:hover{
+#play-button:hover {
     background-color: #009900;
 }
 
-#scoreboard {
+#restartButton {
+    border: 2px solid white;
+    border-radius: 10px;    
+}
+
+#restartButton:hover {
+    background-color: #009900;
+}
+
+scoreboard {
     margin: 0px;
+}
+
+html{
+    overflow-y:hidden;
+    overflow-x:hidden;
 }
